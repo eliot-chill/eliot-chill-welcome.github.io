@@ -46,9 +46,10 @@ function mousePressed() {
   }
 }
 
-function touchStarted() {
+function deviceShaken() {
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
     v.pos = createVector(random(width), random(height));
   }
+  return false;
 }
