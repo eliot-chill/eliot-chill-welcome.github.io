@@ -63,5 +63,4 @@ function deviceShaken() {
       v.target = createVector(v.targetX, v.targetY);
     }
   }
-  return false;
 }
