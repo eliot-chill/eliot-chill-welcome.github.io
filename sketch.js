@@ -13,8 +13,8 @@ function setup() {
   // fill(255);
   // noStroke();
   // text('train', 100, 200);
-  var size = 100
-  var points = font.textToPoints('Welcome!', (width/2)-size*2, height/2, size,
+  var size = 75;
+  var points = font.textToPoints('Welcome!', (width/2)-2.5*size, size, size,
   {
     sampleFactor: 0.15
   });
