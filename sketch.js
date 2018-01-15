@@ -16,7 +16,7 @@ function setup() {
   // noStroke();
   // text('train', 100, 200);
   var size = 75;
-  var points = font.textToPoints(message, (width/2)-2.5*size, size*counter+100, size,
+  var points = font.textToPoints(message, (width/2)-2.5*size, size, size,
   {
     sampleFactor: 0.15
   });
