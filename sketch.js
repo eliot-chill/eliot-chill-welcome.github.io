@@ -1,7 +1,6 @@
 var font;
 var vehicles = [];
-var message = ["Welcome","To","My","Website!"];
-var counter = 0;
+var message = "Welcome";
 var randomPos = false;
 
 function preload() {
@@ -17,7 +16,7 @@ function setup() {
   // noStroke();
   // text('train', 100, 200);
   var size = 75;
-  var points = font.textToPoints(message[counter], (width/2)-2.5*size, size*counter+100, size,
+  var points = font.textToPoints(message, (width/2)-2.5*size, size*counter+100, size,
   {
     sampleFactor: 0.15
   });
@@ -43,17 +42,15 @@ function draw() {
 }
 
 function mousePressed() {
-  counter = (counter + 1) % 4
-  setup();
-  // randomPos = !randomPos;
-  // for (var i = 0; i < vehicles.length; i++) {
-  //   var v = vehicles[i];
-  //   if(randomPos) {
-  //     v.target = createVector(random(width), random(height));
-  //   } else {
-  //     v.target = createVector(v.targetX, v.targetY);
-  //   }
-  // }
+  randomPos = !randomPos;
+  for (var i = 0; i < vehicles.length; i++) {
+    var v = vehicles[i];
+    if(randomPos) {
+      v.target = createVector(random(width), random(height));
+    } else {
+      v.target = createVector(v.targetX, v.targetY);
+    }
+  }
 }
 
 
