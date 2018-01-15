@@ -1,5 +1,6 @@
 var font;
 var vehicles = [];
+var randomPos = false;
 
 function preload() {
   font = loadFont('AvenirNextLTPro-Demi.otf');
@@ -40,16 +41,27 @@ function draw() {
 }
 
 function mousePressed() {
+  randomPos = !randomPos;
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
-    v.pos = createVector(random(width), random(height));
+    if(randomPos) {
+      v.target = createVector(random(width), random(height));
+    } else {
+      v.target = createVector(v.targetX, v.targetY);
+    }
   }
 }
 
+
 function deviceShaken() {
+  randomPos = !randomPos;
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
-    v.pos = createVector(random(width), random(height));
+    if(randomPos) {
+      v.target = createVector(random(width), random(height));
+    } else {
+      v.target = createVector(v.targetX, v.targetY);
+    }
   }
   return false;
 }
