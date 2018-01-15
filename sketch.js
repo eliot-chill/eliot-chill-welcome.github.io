@@ -16,7 +16,7 @@ function setup() {
   var size = 100
   var points = font.textToPoints('Welcome!', (width/2)-size*2, height/2, size,
   {
-    sampleFactor: 0.2
+    sampleFactor: 0.15
   });
 
   for (var i = 0; i < points.length; i++) {
