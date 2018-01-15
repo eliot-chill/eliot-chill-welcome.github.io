@@ -45,3 +45,10 @@ function mousePressed() {
     v.pos = createVector(random(width), random(height));
   }
 }
+
+function touchStarted() {
+  for (var i = 0; i < vehicles.length; i++) {
+    var v = vehicles[i];
+    v.pos = createVector(random(width), random(height));
+  }
+}
