@@ -1,7 +1,6 @@
 var font;
 var vehicles = [];
 var randomPos = false;
-var bg_c = 51;
 
 function preload() {
   font = loadFont('AvenirNextLTPro-Demi.otf');
@@ -32,7 +31,7 @@ function setup() {
 }
 
 function draw() {
-  background(bg_c);
+  background(51);
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
     v.behaviors();
@@ -55,14 +54,13 @@ function mousePressed() {
 
 
 function deviceShaken() {
-  bg_c = 100;
-  // randomPos = !randomPos;
-  // for (var i = 0; i < vehicles.length; i++) {
-  //   var v = vehicles[i];
-  //   if(randomPos) {
-  //     v.target = createVector(random(width), random(height));
-  //   } else {
-  //     v.target = createVector(v.targetX, v.targetY);
-  //   }
-  // }
+  randomPos = !randomPos;
+  for (var i = 0; i < vehicles.length; i++) {
+    var v = vehicles[i];
+    if(randomPos) {
+      v.target = createVector(random(width), random(height));
+    } else {
+      v.target = createVector(v.targetX, v.targetY);
+    }
+  }
 }
