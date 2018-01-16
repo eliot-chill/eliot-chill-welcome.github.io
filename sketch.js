@@ -18,7 +18,7 @@ function setup() {
   var size = 75;
   var points = font.textToPoints(message, (width/2)-2.5*size, size, size,
   {
-    sampleFactor: 0.15
+    sampleFactor: 0.125
   });
 
   for (var i = 0; i < points.length; i++) {
